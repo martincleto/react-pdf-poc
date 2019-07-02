@@ -1,0 +1,92 @@
+{
+  "id": 1,
+  "slug": "aplanet-admin",
+  "created_at": "2019-03-14T01:32:49.852Z",
+  "updated_at": "2019-03-14T01:32:49.852Z",
+  "status": "active",
+  "name": "Luke Skywalker",
+  "email": "tech@aplanet.org",
+  "phone": "+34680652434",
+  "avatar": "/images/luke.jpg",
+  "role": "admin",
+  "user_id": 1,
+  "language": "en",
+  "commercial_comms_accepted": false,
+  "last_terms_accepted": 0,
+  "initiatives_joined": "24",
+  "hour_count": "270",
+  "cohorts": [
+    "hola",
+    "marketing",
+    "ventas"
+  ],
+  "participation_summary": {
+    "initiatives": 27,
+    "members": 1,
+    "granted_hours": 120,
+    "validated_hours": 25,
+    "to_validate_hours": 138
+  },
+  "sdg_report": [
+    {
+      "value": "55.00",
+      "id": "life-on-land",
+      "color": "#56C02B"
+    },
+    {
+      "value": "29.33",
+      "id": "gender-equality",
+      "color": "#FF3A21"
+    },
+    {
+      "value": "18.67",
+      "id": "decent-work-and-economic-growth",
+      "color": "#A21942"
+    },
+    {
+      "value": "18.67",
+      "id": "good-health-and-wellbeing",
+      "color": "#4C9F38"
+    },
+    {
+      "value": "10.67",
+      "id": "life-below-water",
+      "color": "#0A97D9"
+    },
+    {
+      "value": "7.67",
+      "id": "responsible-consumption-and-production",
+      "color": "#BF8B2E"
+    }
+  ],
+  "competence_report": [
+    {
+      "value": "28.00",
+      "id": "empathy"
+    },
+    {
+      "value": "28.00",
+      "id": "effective-communication"
+    },
+    {
+      "value": "27.00",
+      "id": "planning-and-organisation"
+    },
+    {
+      "value": "11.00",
+      "id": "teamwork"
+    },
+    {
+      "value": "10.67",
+      "id": "conflict-management"
+    },
+    {
+      "value": "7.67",
+      "id": "work-under-pressure-adaptation-to-adverse-situations"
+    },
+    {
+      "value": "5.00",
+      "id": "effort-and-self-motivation"
+    }
+  ]
+}
