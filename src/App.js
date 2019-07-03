@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import { PDFViewer } from '@react-pdf/renderer';
+
 import { PDFViewer } from '@react-pdf/renderer';
 
 import ResponsibleProfilePDF from './components/ResponsibleProfilePDF';
@@ -11,10 +13,6 @@ import './App.css';
 
 
 function App() {
-
-  console.log(data);
-
-  //const dataSource = JSON.parse(data);
 
   return (
     <Router>
@@ -32,15 +30,18 @@ function App() {
         </ul>
       </nav>
 
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={ Home } />
       <Route
         path="/viewer"
         render={ () => {
           return (
+            <PDFViewer>
               <ResponsibleProfilePDF dataSource={ data } />
+            </PDFViewer>
           );
         }}
       />
+      <Route path="/button" component={ ButtonDownloadPDF } />
     </Router>
   );
 }

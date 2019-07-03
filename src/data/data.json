@@ -5,8 +5,8 @@
   "updated_at": "2019-03-14T01:32:49.852Z",
   "status": "active",
   "name": "Luke Skywalker",
-  "email": "tech@aplanet.org",
-  "phone": "+34680652434",
+  "email": "luke.skywalker@starwars.com",
+  "phone": "+34777889900",
   "avatar": "/images/luke.jpg",
   "role": "admin",
   "user_id": 1,
@@ -27,6 +27,48 @@
     "validated_hours": 25,
     "to_validate_hours": 138
   },
+  "initiative_report": [
+    {
+      "id": 2,
+      "slug": "cuidar-a-perritos-abandonados--1",
+      "title": "Cuidar a perritos abandonados",
+      "start_time": "2019-07-03T06:00:00.000Z",
+      "end_time": "2019-07-31T14:00:00.000Z",
+      "valid_hours": 7
+    },
+    {
+      "id": 5,
+      "slug": "acompanar-a-ancianos-solos",
+      "title": "Acompañar a ancianos que viven solos",
+      "start_time": "2019-07-03T06:00:00.000Z",
+      "end_time": "2019-07-31T14:00:00.000Z",
+      "valid_hours": 48
+    },
+    {
+      "id": 18,
+      "slug": "limpieza-espacios-naturales",
+      "title": "Limpieza de espacios naturales",
+      "start_time": "2019-07-03T06:00:00.000Z",
+      "end_time": "2019-07-31T14:00:00.000Z",
+      "valid_hours": 16
+    },
+    {
+      "id": 23,
+      "slug": "limpieza-espacios-naturales",
+      "title": "Adopta un gatito",
+      "start_time": "2019-07-03T06:00:00.000Z",
+      "end_time": "2019-07-31T14:00:00.000Z",
+      "valid_hours": 16
+    },
+    {
+      "id": 23,
+      "slug": "ahorra-energia-en-tu-lugar-de-trabajo",
+      "title": "Ahorra energía en tu lugar de trabajo",
+      "start_time": "2019-07-03T06:00:00.000Z",
+      "end_time": "2019-07-31T14:00:00.000Z",
+      "valid_hours": 31
+    }
+  ],
   "sdg_report": [
     {
       "value": "55.00",
