@@ -2,8 +2,8 @@
 
 Prove of concept using [react-pdf](https://react-pdf.org) and [react-router](https://github.com/ReactTraining/react-router).
 
-### Instalation
+### Installation
 
-After cloning this repo, just run `$ npm install` and `$ npm start`.
+After cloning this repo, just run `$ npm install` and `$ yarn start`.
 
-Then browse on http://localhost:3000 to see this POC.
+Then browse on http://localhost:3000 (or the port available, check out the server log) to see this POC.

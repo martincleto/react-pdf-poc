@@ -11,6 +11,7 @@
   "role": "admin",
   "user_id": 1,
   "language": "en",
+  "location": "Polis Massa (Tatooine)",
   "commercial_comms_accepted": false,
   "last_terms_accepted": 0,
   "initiatives_joined": "24",
@@ -34,7 +35,8 @@
       "title": "Cuidar a perritos abandonados",
       "start_time": "2019-07-03T06:00:00.000Z",
       "end_time": "2019-07-31T14:00:00.000Z",
-      "valid_hours": 7
+      "valid_hours": 7,
+      "organization": "Centro Integral de Acogida de Animales de Compañía (CIAAM)"
     },
     {
       "id": 5,
@@ -42,7 +44,8 @@
       "title": "Acompañar a ancianos que viven solos",
       "start_time": "2019-07-03T06:00:00.000Z",
       "end_time": "2019-07-31T14:00:00.000Z",
-      "valid_hours": 48
+      "valid_hours": 48,
+      "organization": "Instituto Provincial de Salud"
     },
     {
       "id": 18,
@@ -50,15 +53,17 @@
       "title": "Limpieza de espacios naturales",
       "start_time": "2019-07-03T06:00:00.000Z",
       "end_time": "2019-07-31T14:00:00.000Z",
-      "valid_hours": 16
+      "valid_hours": 16,
+      "organization": "Ayuntamiento de Bustarviejo"
     },
     {
       "id": 23,
-      "slug": "limpieza-espacios-naturales",
+      "slug": "adopta-un-gatito",
       "title": "Adopta un gatito",
       "start_time": "2019-07-03T06:00:00.000Z",
       "end_time": "2019-07-31T14:00:00.000Z",
-      "valid_hours": 16
+      "valid_hours": 16,
+      "organization": "Promininos"
     },
     {
       "id": 23,
@@ -66,69 +71,70 @@
       "title": "Ahorra energía en tu lugar de trabajo",
       "start_time": "2019-07-03T06:00:00.000Z",
       "end_time": "2019-07-31T14:00:00.000Z",
-      "valid_hours": 31
+      "valid_hours": 31,
+      "organization": "Quantum Energía"
     }
   ],
   "sdg_report": [
     {
-      "value": "55.00",
-      "id": "life-on-land",
-      "color": "#56C02B"
+      "sdg_id": "1",
+      "name": "Fin de la pobreza",
+      "logo": "/images/sdg/01-no-poverty.png"
     },
     {
-      "value": "29.33",
-      "id": "gender-equality",
-      "color": "#FF3A21"
+      "sdg_id": "3",
+      "name": "Salud y bienestar",
+      "logo": "/images/sdg/03-good-health-and-wellbeing.png"
     },
     {
-      "value": "18.67",
-      "id": "decent-work-and-economic-growth",
-      "color": "#A21942"
+      "sdg_id": "4",
+      "name": "Educación de calidad",
+      "logo": "/images/sdg/04-quality-education.png"
     },
     {
-      "value": "18.67",
-      "id": "good-health-and-wellbeing",
-      "color": "#4C9F38"
+      "sdg_id": "5",
+      "name": "Igualdad de género",
+      "logo": "/images/sdg/05-gender-equality.png"
     },
     {
-      "value": "10.67",
-      "id": "life-below-water",
-      "color": "#0A97D9"
+      "sdg_id": "9",
+      "name": "Industria, innovación e infraestructura",
+      "logo": "/images/sdg/09-industry-innovation-and-infrastructure.png"
     },
     {
-      "value": "7.67",
-      "id": "responsible-consumption-and-production",
-      "color": "#BF8B2E"
+      "sdg_id": "10",
+      "name": "Reducción de las desigualdades",
+      "logo": "/images/sdg/10-reduced-inequalities.png"
     }
   ],
   "competence_report": [
     {
-      "value": "28.00",
-      "id": "empathy"
+      "id": "empathy",
+      "name": "Empatía"
     },
     {
-      "value": "28.00",
-      "id": "effective-communication"
+      "id": "effective-communication",
+      "name": "Comunicación efectiva"
     },
     {
-      "value": "27.00",
-      "id": "planning-and-organisation"
+      "id": "planning-and-organisation",
+      "name": "Planificación y organización"
     },
     {
-      "value": "11.00",
-      "id": "teamwork"
+      "id": "teamwork",
+      "name": "Trabajo en equipo"
     },
     {
-      "value": "10.67",
-      "id": "conflict-management"
+      "id": "conflict-management",
+      "name": "Gestión de conflictos"
     },
     {
-      "value": "7.67",
-      "id": "work-under-pressure-adaptation-to-adverse-situations"
+      "id": "work-under-pressure-adaptation-to-adverse-situations",
+      "name": "Adaptación a situaciones adversas o trabajo bajo presión"
     },
     {
-      "value": "5.00",
-      "id": "effort-and-self-motivation"
+      "id": "effort-and-self-motivation",
+      "name": "Capacidad de esfuerzo y automotivación"
     }
   ]
 }

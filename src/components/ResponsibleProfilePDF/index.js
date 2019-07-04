@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Document,
   Image,
+  Link,
   Page,
   StyleSheet,
   Text,
@@ -12,15 +13,32 @@ import styles from './styles';
 
 StyleSheet.create(styles);
 
-const getItemStyle = (index, itemsArr) => {
-  const itemStyles = [styles.item];
+const getElementStyle = (index, arr, elementName) => {
+  const elementStyles = [styles[elementName.toLowerCase()]];
 
-  if (index === (itemsArr.length -1)) {
-    itemStyles.push(styles.lastItem);
+  if (index > 0) {
+    if (index === (arr.length -1)) {
+      elementStyles.push(styles[`last${elementName}`]);
+    }
+  } else {
+    elementStyles.push(styles[`first${elementName}`]);
   }
 
-  return itemStyles;
-} 
+  return elementStyles;
+}
+
+// TODO: Localize this
+const monthsAbbr = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+
+const parseDate = (dateStr) => {
+  const date = new Date(dateStr);
+  const day = date.getDate();
+  const month = monthsAbbr[date.getMonth()];
+  const fullYear = date.getFullYear();
+
+  // TODO: Localize this
+  return `${day} ${month} ${fullYear}`;
+};
 
 const ResponsibleProfilePDF = (dataSource) => {
 
@@ -32,36 +50,49 @@ const ResponsibleProfilePDF = (dataSource) => {
   const validatedHours = data.participation_summary.validated_hours;
 
   const initiatives = data.initiative_report.map((initiative, index, arr) => {
-    const currentItemStyle = getItemStyle(index, arr);
+    const currentItemStyle = getElementStyle(index, arr, 'Item');
+    const currentItemStartDate = parseDate(initiative.start_time);
+    const currentItemEndDate = parseDate(initiative.end_time);
+    const listBulletStyle = getElementStyle(index, arr, 'Bullet');
 
     return (
       <View style={ currentItemStyle } key={ initiative.title }>
-        <View>
+        <Image src="/images/dot.png" style={ listBulletStyle }/>
+        <View style={ styles.itemTitleWrapper }>
           <Text style={ styles.itemTitle }>{ initiative.title } </Text>
           <Text style={ styles.itemTitleExtra }>{ `(${initiative.valid_hours} horas)` }</Text>
         </View>
-        
-        <Text></Text>
+        <View style={ styles.itemDescriptionWrapper }>
+          <Text style={ styles.itemDateRange }>{ `${currentItemStartDate} - ${currentItemEndDate}` }</Text>
+          <Text>Organizador: { initiative.organization }</Text>
+        </View>
       </View>
     );
   });
 
   const sdgs = data.sdg_report.map((sdg, index, arr) => {
-    const currentItemStyle = getItemStyle(index, arr);
+    const currentItemStyle = getElementStyle(index, arr, 'Item');
+    const listBulletStyle = getElementStyle(index, arr, 'Bullet');
 
     return (
-      <View style={ currentItemStyle } key={ sdg.id  }>
-        <Text style={ styles.itemTitle }>{ sdg.id }</Text>
+      <View style={ currentItemStyle } key={ sdg.sdg_id  }>
+        <Image src="/images/dot.png" style={ listBulletStyle }/>
+        <View style={ styles.sdgItemWrapper }>
+          <Image src={sdg.logo} style={ styles.sdgLogo }/>
+          <Text>{ `${sdg.sdg_id}. ${sdg.name}` }</Text>
+        </View>
       </View>
     );
   });
 
   const competences = data.competence_report.map((competence, index, arr) => {
-    const currentItemStyle = getItemStyle(index, arr);
+    const currentItemStyle = getElementStyle(index, arr, 'Item');
+    const listBulletStyle = getElementStyle(index, arr, 'Bullet');
 
     return (
       <View style={ currentItemStyle } key={ competence.id  }>
-        <Text style={ styles.itemTitle }>{ competence.id }</Text>
+        <Image src="/images/star.png" style={ listBulletStyle }/>
+        <Text>{ competence.name }</Text>
       </View>
     );
   });
@@ -79,7 +110,7 @@ const ResponsibleProfilePDF = (dataSource) => {
           </View>
           <View style={ styles.userInfoWrapper }>
             <Text style={ styles.name }>{ data.name }</Text>
-            <Text style={ styles.userInfoItem }>Polis Massa (Tatooine)</Text>
+            <Text style={ styles.userInfoItem }>{ data.location }</Text>
             <Text style={ styles.userInfoItem }>{ data.phone }</Text>
             <Text style={ styles.userInfoItem }>{ data.email }</Text>
           </View>
@@ -96,7 +127,7 @@ const ResponsibleProfilePDF = (dataSource) => {
           </View>
           <View wrap={false} style={ styles.block }>
             <Image
-              src="/images/icons/impact.png"
+              src="/images/icons/SDGs.png"
               style={ styles.blockIcon }
             />
             <Text style={ styles.subheader }>SDGs impactados</Text>
@@ -104,12 +135,22 @@ const ResponsibleProfilePDF = (dataSource) => {
           </View>
           <View wrap={false} style={ styles.block }>
             <Image
-              src="/images/icons/suite.png"
+              src="/images/icons/skills.png"
               style={ styles.blockIcon }
             />
             <Text style={ styles.subheader }>Habilidades obtenidas</Text>
             { competences }
           </View>
+        </View>
+
+        <View style={ styles.credits }>
+          <Text>Perfil Responsable generado por</Text>
+          <Link src="https://aplanet.org/" style={ styles.link }>
+            <Image
+                src="/images/aplanetG.png"
+                style={ styles.corporateLogo }
+              />
+          </Link>
         </View>
 
         <Text

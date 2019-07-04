@@ -1,14 +1,31 @@
+import { Font } from '@react-pdf/renderer';
 
-const fontsPath = '../../fonts';
+const fontsPath = '/fonts';
+const fontsSource = {
+  regular: `${fontsPath}/OpenSans-Regular.ttf`,
+  italic: `${fontsPath}/OpenSans-Italic.ttf`,
+  bold: `${fontsPath}/OpenSans-Bold.ttf`,
+  boldItalic: `${fontsPath}/OpenSans-BoldItalic.ttf`,
+};
+
 const colors = {
   primary: '#117065',
+  grey: '#666666',
   text: '#444444',
   white: '#FFFFFF',
 };
 
+Font.register({ family: 'Open Sans', fonts: [
+  { src: fontsSource.regular},
+  { src: fontsSource.italic, fontStyle: 'italic' },
+  { src: fontsSource.bold, fontWeight: 700 },
+  { src: fontsSource.boldItalic, fontStyle: 'italic', fontWeight: 700 },
+ ]});
+
 const styles = {
   page: {
     color: colors.text,
+    fontFamily: 'Open Sans',
     paddingVertical: 50
   },
   header: {
@@ -55,15 +72,15 @@ const styles = {
   },
   subheader: {
     color: colors.primary,
-    fontSize: 16,
+    fontSize: 17,
     fontWeight: 700,
     paddingLeft: 30,
-    paddingBottom: 10,
+    paddingBottom: 5,
   },
   subheaderExtra: {
     fontSize: 12,
+    marginTop: -1,
     marginLeft: 5,
-    marginBottom: 12,
   },
   block: {
     fontSize: 13,
@@ -77,23 +94,73 @@ const styles = {
     height: 36,
   },
   item: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderLeftWidth: 3,
+    flexDirection: 'column',
+    alingContent: 'flex-start',
+    borderLeftWidth: 2.2,
     borderLeftColor: colors.primary,
-    paddingLeft: 30,
-    paddingBottom: 10,
+    paddingLeft: 28,
+    paddingBottom: 15,
     marginTop: -1,
+  },
+  firstItem: {
+    paddingTop: 8,
   },
   lastItem: {
     borderLeftColor: colors.white,
+  },
+  itemTitleWrapper: {
+    flexDirection: 'row',
   },
   itemTitle: {
     fontWeight: 'bold',
   },
   itemTitleExtra: {
     fontWeight: 'normal',
+    marginLeft: 3,
+  },
+  itemDescriptionWrapper: {
+    fontSize: 12,
+  },
+  bullet: {
+    position: 'absolute',
+    left: -7,
+    top: 2,
+    width: 11,
+    height: 11,
+  },
+  firstBullet: {
+    top: 10,
+  },
+  lastBullet: {
+    top: -1
+  },
+  itemDateRange: {
+    textTransform: 'uppercase',
+  },
+  sdgItemWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    fontSize: 11,
+  },
+  sdgLogo: {
+    width: 30,
+    height: 30,
+    flexBasis: 30,
+    marginRight: 8,
+  },
+  credits: {
+    flexDirection: 'row',
+    color: 'grey',
+    fontSize: 11,
+    paddingLeft: 40,
+  },
+  link: {
+    color: colors.primary,
     marginLeft: 5,
+  },
+  corporateLogo: {
+    width: 56,
+    marginTop: -1,
   },
   footer: {
     position: 'absolute',
@@ -103,7 +170,7 @@ const styles = {
     right: 0,
     flexDirection: 'column',
     textAlign: 'center',
-    color: 'grey',
+    color: colors.grey,
   },
 };
 
