@@ -41,7 +41,14 @@ function App() {
           );
         }}
       />
-      <Route path="/button" component={ ButtonDownloadPDF } />
+      <Route
+        path="/button"
+        render={ () => {
+          return (
+            <ButtonDownloadPDF dataSource={ data } />
+          );
+        }}
+        />
     </Router>
   );
 }

@@ -1,0 +1,25 @@
+.downloadButtonWrapper {
+  text-align: center;
+}
+
+.downloadButtonWrapper a {
+	display:inline-block;
+  background-color: #117065;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	color: #FFFFFF;
+	font-family: Arial;
+	font-size: 16px;
+	text-decoration: none;
+  padding: 16px 31px;
+  border-radius: 5px;
+	cursor:pointer;
+}
+.downloadButtonWrapper a:hover {
+	background-color: #42B7A6;
+}
+
+.downloadButtonWrapper a:active {
+	position: relative;
+	top: 1px;
+}
