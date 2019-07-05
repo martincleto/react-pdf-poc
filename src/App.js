@@ -11,9 +11,7 @@ import data from './data/data.json';
 
 import './App.css';
 
-
 function App() {
-
   return (
     <Router>
       <nav>

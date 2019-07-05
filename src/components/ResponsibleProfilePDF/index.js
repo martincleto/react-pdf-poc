@@ -13,6 +13,22 @@ import styles from './styles';
 
 StyleSheet.create(styles);
 
+const monthsAbbr = {
+  'en': ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dec'],
+  'es': ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
+  'pt': ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'],
+}
+
+const parseDate = (dateStr, lang) => {
+  const date = new Date(dateStr);
+  const day = date.getDate();
+  const month = monthsAbbr[lang][date.getMonth()];
+  const fullYear = date.getFullYear();
+  
+  // TODO: Localize this
+  return `${day} ${month} ${fullYear}`;
+};
+
 const getElementStyle = (index, arr, elementName) => {
   const elementStyles = [styles[elementName.toLowerCase()]];
 
@@ -27,32 +43,18 @@ const getElementStyle = (index, arr, elementName) => {
   return elementStyles;
 }
 
-// TODO: Localize this
-const monthsAbbr = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
-
-const parseDate = (dateStr) => {
-  const date = new Date(dateStr);
-  const day = date.getDate();
-  const month = monthsAbbr[date.getMonth()];
-  const fullYear = date.getFullYear();
-
-  // TODO: Localize this
-  return `${day} ${month} ${fullYear}`;
-};
-
 const ResponsibleProfilePDF = (dataSource) => {
-
+  
   const data = dataSource.dataSource;
-
-  console.log(data);
-
+  
+  const lang = data.language;
   const joinedInitiatives = data.participation_summary.initiatives;
   const validatedHours = data.participation_summary.validated_hours;
-
+  
   const initiatives = data.initiative_report.map((initiative, index, arr) => {
     const currentItemStyle = getElementStyle(index, arr, 'Item');
-    const currentItemStartDate = parseDate(initiative.start_time);
-    const currentItemEndDate = parseDate(initiative.end_time);
+    const currentItemStartDate = parseDate(initiative.start_time, lang);
+    const currentItemEndDate = parseDate(initiative.end_time, lang);
     const listBulletStyle = getElementStyle(index, arr, 'Bullet');
 
     return (
@@ -117,7 +119,7 @@ const ResponsibleProfilePDF = (dataSource) => {
         </View>
 
         <View style={ styles.body }>
-          <View wrap={false} style={ styles.block }>
+          <View style={ styles.block }>
             <Image src="/images/icons/community.png" style={ styles.blockIcon } />
             <View style={ styles.subheaderWrapper }>
               <Text style={ styles.subheader }>Iniciativas en las que ha participado</Text>
@@ -125,7 +127,7 @@ const ResponsibleProfilePDF = (dataSource) => {
             </View>
             { initiatives }
           </View>
-          <View wrap={false} style={ styles.block }>
+          <View style={ styles.block }>
             <Image
               src="/images/icons/SDGs.png"
               style={ styles.blockIcon }
@@ -133,7 +135,7 @@ const ResponsibleProfilePDF = (dataSource) => {
             <Text style={ styles.subheader }>SDGs impactados</Text>
             { sdgs }
           </View>
-          <View wrap={false} style={ styles.block }>
+          <View style={ styles.block }>
             <Image
               src="/images/icons/skills.png"
               style={ styles.blockIcon }
@@ -143,21 +145,23 @@ const ResponsibleProfilePDF = (dataSource) => {
           </View>
         </View>
 
-        <View style={ styles.credits }>
-          <Text>Perfil Responsable generado por</Text>
-          <Link src="https://aplanet.org/" style={ styles.link }>
+        <Link
+          fixed
+          src="https://aplanet.org/"
+          style={ styles.logoLink }
+        >
             <Image
-                src="/images/aplanetG.png"
-                style={ styles.corporateLogo }
-              />
-          </Link>
-        </View>
+              src="/images/aplanetG.png"
+              style={ styles.logo }
+            />
+        </Link>
 
         <Text
           fixed
-          style={ styles.footer}
+          style={ styles.pagination }
           render={({ pageNumber, totalPages }) => ( <Text>{ `${pageNumber} / ${totalPages}` }</Text> )}
         />
+      
       </Page>
     </Document>
   );

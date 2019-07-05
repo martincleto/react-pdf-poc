@@ -24,25 +24,25 @@ Font.register({ family: 'Open Sans', fonts: [
 
 const styles = {
   page: {
+    backgroundColor: colors.white,
     color: colors.text,
     fontFamily: 'Open Sans',
-    paddingVertical: 50
+    paddingVertical: 70
   },
   header: {
-    backgroundColor: colors.primary,
     flexDirection: 'row',
+    color: colors.primary,
     alignItems: 'center',
-    color: colors.white,
     paddingHorizontal: 40,
-    paddingVertical: 20,
-    marginTop: -50,
+    paddingVertical: 40,
+    marginTop: -70,
   },
   name: {
     display: 'block',
     fontSize: 20,
     fontWeight: 700,
     textTransform: 'uppercase',
-    marginBottom: 8,
+    marginBottom: 5,
   },
   avatarWrapper: {
     display: 'inline-block',
@@ -61,9 +61,8 @@ const styles = {
     marginBottom: 5,
   },
   body: {
-    paddingHorizontal: 30,
-    paddingTop: 40,
-    paddingLeft: 50,
+    paddingTop: 20,
+    paddingLeft: 60,
     paddingRight: 30
   },
   subheaderWrapper: {
@@ -107,6 +106,7 @@ const styles = {
   },
   lastItem: {
     borderLeftColor: colors.white,
+    marginTop: -2,
   },
   itemTitleWrapper: {
     flexDirection: 'row',
@@ -158,19 +158,24 @@ const styles = {
     color: colors.primary,
     marginLeft: 5,
   },
-  corporateLogo: {
-    width: 56,
-    marginTop: -1,
-  },
-  footer: {
+  logoLink: {
     position: 'absolute',
-    fontSize: 12,
-    bottom: 30,
-    left: 0,
-    right: 0,
+    left: 40,
+    bottom: 22.5,
+    width: '50%',
+  },
+  logo: {
+    width: 56,
+  },
+  pagination: {
+    position: 'absolute',
+    bottom: 40,
+    right: 30,
     flexDirection: 'column',
-    textAlign: 'center',
+    width: '50%',
     color: colors.grey,
+    fontSize: 11,
+    textAlign: 'right',
   },
 };
 
