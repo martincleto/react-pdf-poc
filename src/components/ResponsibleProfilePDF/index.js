@@ -123,7 +123,7 @@ const ResponsibleProfilePDF = (dataSource) => {
             <Image src="/images/icons/community.png" style={ styles.blockIcon } />
             <View style={ styles.subheaderWrapper }>
               <Text style={ styles.subheader }>Iniciativas en las que ha participado</Text>
-              <Text style={ styles.subheaderExtra }>{ `(${ joinedInitiatives } iniciativas / ${ validatedHours } horas)` }</Text>
+              <Text style={ styles.subheaderExtra }>{ `(${ joinedInitiatives } iniciativas / ${ validatedHours } h.)` }</Text>
             </View>
             { initiatives }
           </View>

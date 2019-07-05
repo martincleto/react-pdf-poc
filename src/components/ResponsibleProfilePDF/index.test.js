@@ -26,6 +26,5 @@ describe('<ResponsibleProfilePDF />', () => {
     expect(spyStyleSheetCreate).toHaveBeenCalledTimes(1);
     expect(spyStyleSheetCreate).toHaveBeenCalledWith(styles);
   });
-
 });
 

@@ -77,9 +77,10 @@ const styles = {
     paddingBottom: 5,
   },
   subheaderExtra: {
-    fontSize: 12,
-    marginTop: -1,
+    color: colors.primary,
+    fontSize: 15,
     marginLeft: 5,
+    marginBottom: 3,
   },
   block: {
     fontSize: 13,
