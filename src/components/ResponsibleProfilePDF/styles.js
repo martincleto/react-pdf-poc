@@ -141,7 +141,6 @@ const styles = {
   sdgItemWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    fontSize: 11,
   },
   sdgLogo: {
     width: 30,

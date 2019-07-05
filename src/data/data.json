@@ -79,62 +79,75 @@
     {
       "sdg_id": "1",
       "name": "Fin de la pobreza",
-      "logo": "/images/sdg/01-no-poverty.png"
+      "logo": "/images/sdg/01-no-poverty.png",
+      "valid_hours": 8.5
     },
     {
       "sdg_id": "3",
       "name": "Salud y bienestar",
-      "logo": "/images/sdg/03-good-health-and-wellbeing.png"
+      "logo": "/images/sdg/03-good-health-and-wellbeing.png",
+      "valid_hours": 15
     },
     {
       "sdg_id": "4",
       "name": "Educación de calidad",
-      "logo": "/images/sdg/04-quality-education.png"
+      "logo": "/images/sdg/04-quality-education.png",
+      "valid_hours": 3
     },
     {
       "sdg_id": "5",
       "name": "Igualdad de género",
-      "logo": "/images/sdg/05-gender-equality.png"
+      "logo": "/images/sdg/05-gender-equality.png",
+      "valid_hours": 999
     },
     {
       "sdg_id": "9",
       "name": "Industria, innovación e infraestructura",
-      "logo": "/images/sdg/09-industry-innovation-and-infrastructure.png"
+      "logo": "/images/sdg/09-industry-innovation-and-infrastructure.png",
+      "valid_hours": 4.5
     },
     {
       "sdg_id": "10",
       "name": "Reducción de las desigualdades",
-      "logo": "/images/sdg/10-reduced-inequalities.png"
+      "logo": "/images/sdg/10-reduced-inequalities.png",
+      "valid_hours": 12
     }
   ],
   "competence_report": [
     {
       "id": "empathy",
-      "name": "Empatía"
+      "name": "Empatía",
+      "valid_hours": 4.2
     },
     {
       "id": "effective-communication",
-      "name": "Comunicación efectiva"
+      "name": "Comunicación efectiva",
+      "valid_hours": 55
     },
     {
       "id": "planning-and-organisation",
-      "name": "Planificación y organización"
+      "name": "Planificación y organización",
+      "valid_hours": 999
     },
     {
       "id": "teamwork",
-      "name": "Trabajo en equipo"
+      "name": "Trabajo en equipo",
+      "valid_hours": 15.25
     },
     {
       "id": "conflict-management",
-      "name": "Gestión de conflictos"
+      "name": "Gestión de conflictos",
+      "valid_hours": 12
     },
     {
       "id": "work-under-pressure-adaptation-to-adverse-situations",
-      "name": "Adaptación a situaciones adversas o trabajo bajo presión"
+      "name": "Adaptación a situaciones adversas o trabajo bajo presión",
+      "valid_hours": 20
     },
     {
       "id": "effort-and-self-motivation",
-      "name": "Capacidad de esfuerzo y automotivación"
+      "name": "Capacidad de esfuerzo y automotivación",
+      "valid_hours": 6
     }
   ]
 }

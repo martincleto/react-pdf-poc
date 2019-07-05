@@ -49,7 +49,7 @@ const ResponsibleProfilePDF = (dataSource) => {
   
   const lang = data.language;
   const joinedInitiatives = data.participation_summary.initiatives;
-  const validatedHours = data.participation_summary.validated_hours;
+  const inititiativesValidatedHours = data.participation_summary.validated_hours;
   
   const initiatives = data.initiative_report.map((initiative, index, arr) => {
     const currentItemStyle = getElementStyle(index, arr, 'Item');
@@ -81,7 +81,7 @@ const ResponsibleProfilePDF = (dataSource) => {
         <Image src="/images/dot.png" style={ listBulletStyle }/>
         <View style={ styles.sdgItemWrapper }>
           <Image src={sdg.logo} style={ styles.sdgLogo }/>
-          <Text>{ `${sdg.sdg_id}. ${sdg.name}` }</Text>
+          <Text>{ `${sdg.sdg_id}. ${sdg.name} (${sdg.valid_hours} h.)` }</Text>
         </View>
       </View>
     );
@@ -94,7 +94,7 @@ const ResponsibleProfilePDF = (dataSource) => {
     return (
       <View style={ currentItemStyle } key={ competence.id  }>
         <Image src="/images/star.png" style={ listBulletStyle }/>
-        <Text>{ competence.name }</Text>
+        <Text>{ `${competence.name} (${competence.valid_hours} h.)` }</Text>
       </View>
     );
   });
@@ -123,7 +123,7 @@ const ResponsibleProfilePDF = (dataSource) => {
             <Image src="/images/icons/community.png" style={ styles.blockIcon } />
             <View style={ styles.subheaderWrapper }>
               <Text style={ styles.subheader }>Iniciativas en las que ha participado</Text>
-              <Text style={ styles.subheaderExtra }>{ `(${ joinedInitiatives } iniciativas / ${ validatedHours } h.)` }</Text>
+              <Text style={ styles.subheaderExtra }>{ `(${ joinedInitiatives } iniciativas / ${ inititiativesValidatedHours } h.)` }</Text>
             </View>
             { initiatives }
           </View>
