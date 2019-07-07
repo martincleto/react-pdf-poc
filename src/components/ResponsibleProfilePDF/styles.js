@@ -11,6 +11,7 @@ const fontsSource = {
 const colors = {
   primary: '#117065',
   grey: '#666666',
+  lightGrey: '#AAAAAA',
   text: '#444444',
   white: '#FFFFFF',
 };
@@ -93,6 +94,19 @@ const styles = {
     width: 36,
     height: 36,
   },
+  bullet: {
+    position: 'absolute',
+    left: -7,
+    top: 2,
+    width: 11,
+    height: 11,
+  },
+  firstBullet: {
+    top: 10,
+  },
+  lastBullet: {
+    top: -1
+  },
   item: {
     flexDirection: 'column',
     alingContent: 'flex-start',
@@ -116,31 +130,23 @@ const styles = {
     fontWeight: 'bold',
   },
   itemTitleExtra: {
+    color: colors.lightGrey,
     fontWeight: 'normal',
-    marginLeft: 3,
+    marginLeft: 5,
   },
   itemDescriptionWrapper: {
     fontSize: 12,
   },
-  bullet: {
-    position: 'absolute',
-    left: -7,
-    top: 2,
-    width: 11,
-    height: 11,
-  },
-  firstBullet: {
-    top: 10,
-  },
-  lastBullet: {
-    top: -1
-  },
   itemDateRange: {
     textTransform: 'uppercase',
   },
-  sdgItemWrapper: {
+  itemOutterWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  itemValidHours: {
+    color: colors.lightGrey,
+    marginLeft: 10,
   },
   sdgLogo: {
     width: 30,

@@ -62,7 +62,7 @@ const ResponsibleProfilePDF = (dataSource) => {
         <Image src="/images/dot.png" style={ listBulletStyle }/>
         <View style={ styles.itemTitleWrapper }>
           <Text style={ styles.itemTitle }>{ initiative.title } </Text>
-          <Text style={ styles.itemTitleExtra }>{ `(${initiative.valid_hours} horas)` }</Text>
+          <Text style={ styles.itemTitleExtra }>{ `${initiative.valid_hours} h.` }</Text>
         </View>
         <View style={ styles.itemDescriptionWrapper }>
           <Text style={ styles.itemDateRange }>{ `${currentItemStartDate} - ${currentItemEndDate}` }</Text>
@@ -79,9 +79,10 @@ const ResponsibleProfilePDF = (dataSource) => {
     return (
       <View style={ currentItemStyle } key={ sdg.sdg_id  }>
         <Image src="/images/dot.png" style={ listBulletStyle }/>
-        <View style={ styles.sdgItemWrapper }>
+        <View style={ styles.itemOutterWrapper }>
           <Image src={sdg.logo} style={ styles.sdgLogo }/>
-          <Text>{ `${sdg.sdg_id}. ${sdg.name} (${sdg.valid_hours} h.)` }</Text>
+          <Text>{ `${sdg.sdg_id}. ${sdg.name}` }</Text>
+          <Text style={ styles.itemValidHours }>{ `${sdg.valid_hours} h.` }</Text>
         </View>
       </View>
     );
@@ -94,7 +95,10 @@ const ResponsibleProfilePDF = (dataSource) => {
     return (
       <View style={ currentItemStyle } key={ competence.id  }>
         <Image src="/images/star.png" style={ listBulletStyle }/>
-        <Text>{ `${competence.name} (${competence.valid_hours} h.)` }</Text>
+        <View style={ styles.itemOutterWrapper }>
+          <Text>{ `${competence.name}` }</Text>
+          <Text style={ styles.itemValidHours }>{ `${competence.valid_hours} h.` }</Text>
+        </View>
       </View>
     );
   });
