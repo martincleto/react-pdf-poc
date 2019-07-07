@@ -1,6 +1,14 @@
 
 module.exports = {
-  coverageDirectory: 'coverage',
+  collectCoverage: true,
+  collectCoverageFrom: ['<rootDir>src/**/*.js'],
+  coverageDirectory: '<rootDir>__coverage__',
+  coverageReporters: [
+    'json',
+    'lcov',
+    'text',
+    'clover'
+  ],
   coverageThreshold: {
     global: {
       branches: 80,
@@ -10,5 +18,5 @@ module.exports = {
     }
   },
   setupFiles: ['<rootDir>src/setupTests.js'],
-  verbose: true
+  verbose: true,
 };
