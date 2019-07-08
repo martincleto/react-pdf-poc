@@ -62,7 +62,7 @@ const ResponsibleProfilePDF = (dataSource) => {
         <Image src="/images/dot.png" style={ listBulletStyle }/>
         <View style={ styles.itemTitleWrapper }>
           <Text style={ styles.itemTitle }>{ initiative.title } </Text>
-          <Text style={ styles.itemTitleExtra }>{ `${initiative.valid_hours} h.` }</Text>
+          <Text style={ styles.itemTitleExtra }>{ `${initiative.valid_hours} h` }</Text>
         </View>
         <View style={ styles.itemDescriptionWrapper }>
           <Text style={ styles.itemDateRange }>{ `${currentItemStartDate} - ${currentItemEndDate}` }</Text>
@@ -82,7 +82,7 @@ const ResponsibleProfilePDF = (dataSource) => {
         <View style={ styles.itemOutterWrapper }>
           <Image src={sdg.logo} style={ styles.sdgLogo }/>
           <Text>{ `${sdg.sdg_id}. ${sdg.name}` }</Text>
-          <Text style={ styles.itemValidHours }>{ `${sdg.valid_hours} h.` }</Text>
+          <Text style={ styles.itemValidHours }>{ `${sdg.valid_hours} h` }</Text>
         </View>
       </View>
     );
@@ -97,7 +97,7 @@ const ResponsibleProfilePDF = (dataSource) => {
         <Image src="/images/star.png" style={ listBulletStyle }/>
         <View style={ styles.itemOutterWrapper }>
           <Text>{ `${competence.name}` }</Text>
-          <Text style={ styles.itemValidHours }>{ `${competence.valid_hours} h.` }</Text>
+          <Text style={ styles.itemValidHours }>{ `${competence.valid_hours} h` }</Text>
         </View>
       </View>
     );
@@ -127,7 +127,7 @@ const ResponsibleProfilePDF = (dataSource) => {
             <Image src="/images/icons/community.png" style={ styles.blockIcon } />
             <View style={ styles.subheaderWrapper }>
               <Text style={ styles.subheader }>Iniciativas en las que ha participado</Text>
-              <Text style={ styles.subheaderExtra }>{ `(${ joinedInitiatives } iniciativas / ${ inititiativesValidatedHours } h.)` }</Text>
+              <Text style={ styles.subheaderExtra }>{ `(${ joinedInitiatives } iniciativas / ${ inititiativesValidatedHours } h)` }</Text>
             </View>
             { initiatives }
           </View>
